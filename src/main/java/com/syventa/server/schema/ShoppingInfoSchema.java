@@ -15,7 +15,7 @@ public class ShoppingInfoSchema {
     @Column(name = "shopping_id")
     private Integer shoppingId;
     private Double total;
-    private BigInteger amount;
+    private BigInteger amounts;
 
     public Integer getId() {
         return id;
@@ -49,11 +49,11 @@ public class ShoppingInfoSchema {
         this.total = total;
     }
 
-    public BigInteger getAmount() {
-        return amount;
+    public BigInteger getAmounts() {
+        return amounts;
     }
 
-    public void setAmount(BigInteger amount) {
-        this.amount = amount;
+    public void setAmounts(BigInteger amounts) {
+        this.amounts = amounts;
     }
 }

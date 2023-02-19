@@ -19,7 +19,7 @@ public class ClientSchema {
     private String address;
     private Character sex;
     private LocalDate birthday;
-    private BigInteger point;
+    private BigInteger points;
 
     public Character getSex() {
         return sex;
@@ -85,11 +85,11 @@ public class ClientSchema {
         this.birthday = birthday;
     }
 
-    public BigInteger getPoint() {
-        return point;
+    public BigInteger getPoints() {
+        return points;
     }
 
-    public void setPoint(BigInteger point) {
-        this.point = point;
+    public void setPoints(BigInteger points) {
+        this.points = points;
     }
 }
