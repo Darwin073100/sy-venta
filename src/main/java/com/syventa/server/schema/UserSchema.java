@@ -15,6 +15,18 @@ public class UserSchema {
     private String userName;
     private String recover;
 
+    @OneToOne()
+    @JoinColumn(name = "worker_id", insertable = false, updatable = false)
+    private WorkerSchema worker;
+
+    public WorkerSchema getWorker() {
+        return worker;
+    }
+
+    public void setWorker(WorkerSchema worker) {
+        this.worker = worker;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -1,8 +1,8 @@
 package com.syventa.server.service;
 
-import com.syventa.server.jpa.ShoppingInfoJpa;
-import com.syventa.server.repository.ShoppingInfoRepository;
-import com.syventa.server.schema.ShoppingInfoSchema;
+import com.syventa.server.jpa.PurchaseInfoJpa;
+import com.syventa.server.repository.PurchaseInfoRepository;
+import com.syventa.server.schema.PurchaseInfoSchema;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,15 +10,15 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ShoppingInfoService implements ShoppingInfoRepository {
+public class PurchaseInfoService implements PurchaseInfoRepository {
     @Autowired
-    private ShoppingInfoJpa jpa;
+    private PurchaseInfoJpa jpa;
     /**
      * @return
      */
     @Override
-    public List<ShoppingInfoSchema> findAll() {
-        return (List<ShoppingInfoSchema>) jpa.findAll();
+    public List<PurchaseInfoSchema> findAll() {
+        return (List<PurchaseInfoSchema>) jpa.findAll();
     }
 
     /**
@@ -26,8 +26,8 @@ public class ShoppingInfoService implements ShoppingInfoRepository {
      * @return
      */
     @Override
-    public Optional<ShoppingInfoSchema> findById(int id) {
-        return (Optional<ShoppingInfoSchema>) jpa.findById(id);
+    public Optional<PurchaseInfoSchema> findById(int id) {
+        return (Optional<PurchaseInfoSchema>) jpa.findById(id);
     }
 
     /**
@@ -35,7 +35,7 @@ public class ShoppingInfoService implements ShoppingInfoRepository {
      * @return
      */
     @Override
-    public ShoppingInfoSchema save(ShoppingInfoSchema schema) {
+    public PurchaseInfoSchema save(PurchaseInfoSchema schema) {
         return jpa.save(schema);
     }
 
@@ -45,7 +45,7 @@ public class ShoppingInfoService implements ShoppingInfoRepository {
      * @return
      */
     @Override
-    public ShoppingInfoSchema update(int id, ShoppingInfoSchema schema) {
+    public PurchaseInfoSchema update(int id, PurchaseInfoSchema schema) {
         schema.setId(id);
         return jpa.saveAndFlush(schema);
     }

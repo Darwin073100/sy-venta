@@ -1,8 +1,8 @@
 package com.syventa.server.service;
 
-import com.syventa.server.jpa.ShoppingJpa;
-import com.syventa.server.repository.ShoppingRepository;
-import com.syventa.server.schema.ShoppingSchema;
+import com.syventa.server.jpa.SalesCarJpa;
+import com.syventa.server.repository.SalesCarRepository;
+import com.syventa.server.schema.SalesCarSchema;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,53 +10,53 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ShoppingService implements ShoppingRepository {
+public class SalesCarService implements SalesCarRepository {
     @Autowired
-    private ShoppingJpa jpa;
+    private SalesCarJpa jpa;
     /**
-     * @return 
-     */
-    @Override
-    public List<ShoppingSchema> findAll() {
-        return (List<ShoppingSchema>) jpa.findAll();
-    }
-
-    /**
-     * @param id 
      * @return
      */
     @Override
-    public Optional<ShoppingSchema> findById(int id) {
-        return (Optional<ShoppingSchema>) jpa.findById(id);
+    public List<SalesCarSchema> findAll() {
+        return (List<SalesCarSchema>) jpa.findAll();
     }
 
     /**
-     * @param schema 
+     * @param id
      * @return
      */
     @Override
-    public ShoppingSchema save(ShoppingSchema schema) {
-        return jpa.save(schema);
+    public Optional<SalesCarSchema> findById(int id) {
+        return (Optional<SalesCarSchema>) jpa.findById(id);
     }
 
     /**
-     * @param id 
      * @param schema
      * @return
      */
     @Override
-    public ShoppingSchema update(int id, ShoppingSchema schema) {
+    public SalesCarSchema save(SalesCarSchema schema) {
+        return jpa.save(schema);
+    }
+
+    /**
+     * @param id
+     * @param schema
+     * @return
+     */
+    @Override
+    public SalesCarSchema update(int id, SalesCarSchema schema) {
         schema.setId(id);
         return jpa.saveAndFlush(schema);
     }
 
     /**
-     * @param id 
+     * @param id
      * @return
      */
     @Override
     public Boolean delete(int id) {
-        return findById(id).map(item -> {
+        return findById(id).map(item ->{
             jpa.deleteById(id);
             return true;
         }).orElse(false);

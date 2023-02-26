@@ -5,15 +5,15 @@ import jakarta.persistence.*;
 import java.math.BigInteger;
 
 @Entity
-@Table(name = "shopping_info")
-public class ShoppingInfoSchema {
+@Table(name = "purchase_info")
+public class PurchaseInfoSchema {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "product_id")
     private Integer productId;
-    @Column(name = "shopping_id")
-    private Integer shoppingId;
+    @Column(name = "purchase_id")
+    private Integer purchaseId;
     private Double total;
     private BigInteger amounts;
 
@@ -33,12 +33,12 @@ public class ShoppingInfoSchema {
         this.productId = productId;
     }
 
-    public Integer getShoppingId() {
-        return shoppingId;
+    public Integer getPurchaseId() {
+        return purchaseId;
     }
 
-    public void setShoppingId(Integer shoppingId) {
-        this.shoppingId = shoppingId;
+    public void setPurchaseId(Integer purchaseId) {
+        this.purchaseId = purchaseId;
     }
 
     public Double getTotal() {

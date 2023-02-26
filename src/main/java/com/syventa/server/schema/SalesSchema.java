@@ -19,6 +19,44 @@ public class SalesSchema {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
+    //============================--Asociaciones--===========================================//
+    @OneToOne(mappedBy = "sales")
+    private SalesInfoSchema salesInfo;
+    @OneToOne
+    @JoinColumn(name = "worker_id", insertable = false, updatable = false)
+    private WorkerSchema worker;
+    @OneToOne
+    @JoinColumn(name = "client_id", insertable = false, updatable = false)
+    private ClientSchema client;
+    // get-set
+
+    public SalesInfoSchema getSalesInfo() {
+        return salesInfo;
+    }
+
+    public void setSalesInfo(SalesInfoSchema salesInfo) {
+        this.salesInfo = salesInfo;
+    }
+
+    public WorkerSchema getWorker() {
+        return worker;
+    }
+
+    public void setWorker(WorkerSchema worker) {
+        this.worker = worker;
+    }
+
+    public ClientSchema getClient() {
+        return client;
+    }
+
+    public void setClient(ClientSchema client) {
+        this.client = client;
+    }
+
+    //---END-GET-SET
+    //============================--END--===========================================//
+
     public Integer getId() {
         return id;
     }

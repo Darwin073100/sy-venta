@@ -5,8 +5,8 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "shopping")
-public class ShoppingSchema {
+@Table(name = "purchase")
+public class PurchaseSchema {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

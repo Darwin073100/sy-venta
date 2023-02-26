@@ -1,6 +1,7 @@
 package com.syventa.server.schema;
 
 import jakarta.persistence.*;
+import org.springframework.data.jpa.repository.Query;
 
 import java.time.LocalDate;
 
@@ -18,6 +19,10 @@ public class WorkerSchema {
     private String address;
     private Character sex;
     private LocalDate birthday;
+
+    // Resolve FK
+    @OneToOne(mappedBy = "worker")
+    private UserSchema user;
 
     public Integer getId() {
         return id;
